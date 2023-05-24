@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}輸入學生資料{% endblock %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<!--製作表單-->
+<form action="/post/" method="POST" name="addstd">
+	{% csrf_token %}
+	<div>請輸入姓名：<input type="text" name="stdName" />
+	<div>請輸入學號：<input type="text" name="stdID" />
+	<div>請輸入性別：<input type="texst" name="stdSex" />
+	<div>請輸入生日：<input type="text" name="stdBirth" />
+	<div>請輸入信箱：<input type="text" name="stdEmail" />
+	<div>請輸入電話：<input type="text" name="stdPhone" />
+	<div>請輸入地址：<input type="text" name="stdAddress" />
+		<input type="submit" value="送出資料" />
+	</div>
+	<div>接收到的資料：{{mess}}</div>
+</form>
+{% endblock %}
